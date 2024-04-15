@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	// Define a random number between 1 and 15
+	number := int(math.Floor(math.RandFloat64() * 15)) + 1
+
+	fmt.Println("What is the square root of", number, "?")
+	var answer float64
+
+	// Scan for user input
+	fmt.Scanf("%f", &answer)
+
+	// Check if the answer is correct
+	if math.Round(answer*answer) == number {
+		fmt.Println("Correct!")
+	} else {
+		fmt.Println("Incorrect. The square root of", number, "is", math.Sqrt(float64(number)))
+	}
+}
